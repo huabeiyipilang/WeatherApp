@@ -8,7 +8,6 @@ import android.os.Message;
 
 import cn.kli.weather.base.BaseActivity;
 import cn.kli.weather.engine.WeatherEngine;
-import weathersource.weathercomcn.SourceWeatherComCn;
 import weathersource.webxmlcomcn.SourceWebXml;
 
 /**
@@ -42,7 +41,7 @@ public class StartupActivity extends BaseActivity{
         @Override
         protected Object doInBackground(Object[] objects) {
 
-            WeatherEngine.getInstance(StartupActivity.this).init(new SourceWeatherComCn(StartupActivity.this));
+            WeatherEngine.getInstance(StartupActivity.this).init(new SourceWebXml(StartupActivity.this));
             mHandler.sendEmptyMessage(MSG_INIT_FINISHED);
             return null;
         }
